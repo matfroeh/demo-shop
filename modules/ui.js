@@ -1,6 +1,6 @@
 // DOM manipulation functions
 
-export function createItemCard(dataObject, objectId) {
+export function createItemCard(dataObject) {
   const cardContainer = document.createElement("div");
   cardContainer.classList.add(
     
@@ -34,7 +34,7 @@ export function createItemCard(dataObject, objectId) {
     "rounded",
     "hover:bg-blue-600"
   );
-  cardBtn.href = objectId;
+  // cardBtn.href = objectId;
   cardBtn.textContent = "Add to Shopping Cart"
 
   cardDetails.appendChild(cardHeader);
@@ -44,9 +44,8 @@ export function createItemCard(dataObject, objectId) {
   cardContainer.appendChild(cardImg);
   cardContainer.appendChild(cardDetails);
 
-  return cardContainer;
+  return [cardContainer, dataObject.title, cardBtn];
 }
-
 
 
 
